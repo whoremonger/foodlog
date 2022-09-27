@@ -1,0 +1,20 @@
+
+<% content_for :title do %>
+  Foodlog &ndash; <%= DateTime.now %>
+<% end %>
+
+<div class="columns mt-6 is-centered">
+  <div id="entries">
+    <% @entries.each do |entry| %>
+    <div class="column is-one-quarter">
+      <%= render entry %>
+      <div class="card-footer">
+        <p><%= link_to "Show", entry, class: "card-footer-item" %></p>
+        <p><%= link_to "New entry", new_entry_path, class: "card-footer-item" %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
